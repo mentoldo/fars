@@ -1,0 +1,37 @@
+---
+title: "Quickstart"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Quickstart}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(fars)
+```
+
+## Aims of the package
+
+This package is part of an assignment for Building R Packages of Coursera. This package allows you to describe data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System, in the time period 2013-2015.
+It has two functions `fars_summarize_years` and `fars_map_state`.  
+
+`fars_summarize_years` makes a frecuency table for accidents by months for years passed as arguments for all US States.
+
+```{r fars_summarize_years}
+fars_summarize_years(c(2013, 2014, 2015))
+```
+
+`fars_map_state` plots the geolalization of all fatal crashes in highways in the indicated year and state.
+
+```{r}
+fars_map_state(26, 2015)
+```
+
