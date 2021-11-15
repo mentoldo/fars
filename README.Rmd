@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # fars
 
 <!-- badges: start -->
+[![Travis build status](https://travis-ci.com/mentoldo/fars.svg?branch=main)](https://travis-ci.com/mentoldo/fars)
 <!-- badges: end -->
 
 The goal of fars is to describe data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System, in the time period 2013-2015.

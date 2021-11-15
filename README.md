@@ -4,6 +4,9 @@
 # fars
 
 <!-- badges: start -->
+
+[![Travis build
+status](https://travis-ci.com/mentoldo/fars.svg?branch=main)](https://travis-ci.com/mentoldo/fars)
 <!-- badges: end -->
 
 The goal of fars is to describe data from the US National Highway
