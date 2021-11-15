@@ -1,15 +1,16 @@
 Package: fars
-Title: What the Package Does (One Line, Title Case)
+Title: Describe FARS data in 2013-2015
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Matías Adrián", "Alfonso", , "matias.alfonso@gmail.com", role = c("aut", "cre"))
+Description: This package allows you to describe data from the US National Highway
+    Traffic Safety Administration's Fatality Analysis Reporting System, in the time period 2013-2015
+License: `use_gpl3_license()`
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
+Imports: 
+    dplyr
 Suggests: 
     knitr,
     rmarkdown

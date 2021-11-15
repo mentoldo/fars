@@ -78,7 +78,7 @@ fars_read_years <- function(years) {
 #' fars_summarize_years(list(2013, 2015))
 #'
 #' @importFrom magrittr %>%
-#' @import dplyr
+#' @importFrom dplyr n
 #'
 #' @export
 fars_summarize_years <- function(years) {
