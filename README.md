@@ -16,41 +16,225 @@ and `fars_map_state`
 You can install the development version of fars like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+install_github('mentoldo/fars', build_vignettes=TRUE)
 ```
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+It has two functions `fars_summarize_years` and `fars_map_state`.
+
+`fars_summarize_years` makes a frecuency table for accidents by months
+for years passed as arguments for all US States.
 
 ``` r
 library(fars)
 ## basic example code
+library(kableExtra)
+
+fars_summarize_years(c(2013, 2014, 2015)) %>% 
+  kable()
+#> [1] 2013
+#> [1] "/home/psyche/R/x86_64-pc-linux-gnu-library/4.1/fars/extdata/accident_2013.csv.bz2"
+#> [1] 2014
+#> [1] "/home/psyche/R/x86_64-pc-linux-gnu-library/4.1/fars/extdata/accident_2014.csv.bz2"
+#> [1] 2015
+#> [1] "/home/psyche/R/x86_64-pc-linux-gnu-library/4.1/fars/extdata/accident_2015.csv.bz2"
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+MONTH
+</th>
+<th style="text-align:right;">
+2013
+</th>
+<th style="text-align:right;">
+2014
+</th>
+<th style="text-align:right;">
+2015
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2230
+</td>
+<td style="text-align:right;">
+2168
+</td>
+<td style="text-align:right;">
+2368
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+1952
+</td>
+<td style="text-align:right;">
+1893
+</td>
+<td style="text-align:right;">
+1968
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+2356
+</td>
+<td style="text-align:right;">
+2245
+</td>
+<td style="text-align:right;">
+2385
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+2300
+</td>
+<td style="text-align:right;">
+2308
+</td>
+<td style="text-align:right;">
+2430
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+2532
+</td>
+<td style="text-align:right;">
+2596
+</td>
+<td style="text-align:right;">
+2847
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+2692
+</td>
+<td style="text-align:right;">
+2583
+</td>
+<td style="text-align:right;">
+2765
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+2660
+</td>
+<td style="text-align:right;">
+2696
+</td>
+<td style="text-align:right;">
+2998
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+2899
+</td>
+<td style="text-align:right;">
+2800
+</td>
+<td style="text-align:right;">
+3016
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+2741
+</td>
+<td style="text-align:right;">
+2618
+</td>
+<td style="text-align:right;">
+2865
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+2768
+</td>
+<td style="text-align:right;">
+2831
+</td>
+<td style="text-align:right;">
+3019
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+2615
+</td>
+<td style="text-align:right;">
+2714
+</td>
+<td style="text-align:right;">
+2724
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+2457
+</td>
+<td style="text-align:right;">
+2604
+</td>
+<td style="text-align:right;">
+2781
+</td>
+</tr>
+</tbody>
+</table>
+
+`fars_map_state` plots the geolalization of all fatal crashes in
+highways in the indicated year and state.
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+fars_map_state(26, 2015)
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+<img src="man/figures/README-example_map_state-1.png" width="100%" />

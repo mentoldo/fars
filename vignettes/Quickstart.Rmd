@@ -31,7 +31,7 @@ fars_summarize_years(c(2013, 2014, 2015))
 
 `fars_map_state` plots the geolalization of all fatal crashes in highways in the indicated year and state.
 
-```{r}
+```{r fars_map_state}
 fars_map_state(26, 2015)
 ```
 
