@@ -18,6 +18,6 @@ it throw an error.
 }
 \examples{
 
-fars_read_years(list(2013, 2015))
+fars:::fars_read_years(list(2013, 2015))
 
 }

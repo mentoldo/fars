@@ -17,6 +17,6 @@ Check if file exists and read it. If file doesn't exist it throw an error.
 }
 \examples{
 
-df <- fars_read("accident_2015.csv.bz2")
+df <- fars:::fars_read(fars:::make_filename(2015))
 head(df)
 }

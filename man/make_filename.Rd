@@ -17,5 +17,5 @@ Make a filename path to FARS csv data for a given year.
 }
 \examples{
 
-make_filename(2013)
+fars:::make_filename(2013)
 }

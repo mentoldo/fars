@@ -1,4 +1,4 @@
 library('testthat')
 
 ## Test make_filename.
-expect_that(basename(make_filename(2015)), is_identical_to("accident_2015.csv.bz2"))
+expect_that(basename(fars:::make_filename(2015)), is_identical_to("accident_2015.csv.bz2"))

@@ -8,7 +8,7 @@
 #'
 #' @examples
 #'
-#' df <- fars_read("accident_2015.csv.bz2")
+#' df <- fars:::fars_read(fars:::make_filename(2015))
 #' head(df)
 fars_read <- function(filename) {
         if(!file.exists(filename))
@@ -29,7 +29,7 @@ fars_read <- function(filename) {
 #'
 #' @examples
 #'
-#' make_filename(2013)
+#' fars:::make_filename(2013)
 make_filename <- function(year) {
         year <- as.integer(year)
         system.file('extdata', sprintf("accident_%d.csv.bz2", year), package='fars')
@@ -46,7 +46,7 @@ make_filename <- function(year) {
 #'
 #' @examples
 #'
-#' fars_read_years(list(2013, 2015))
+#' fars:::fars_read_years(list(2013, 2015))
 #'
 #' @importFrom magrittr %>%
 fars_read_years <- function(years) {

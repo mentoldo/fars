@@ -2,5 +2,5 @@
 
 export(fars_map_state)
 export(fars_summarize_years)
-import(dplyr)
+importFrom(dplyr,n)
 importFrom(magrittr,"%>%")
