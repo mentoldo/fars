@@ -51,9 +51,9 @@ make_filename <- function(year) {
 #' @importFrom magrittr %>%
 fars_read_years <- function(years) {
         lapply(years, function(year) {
-                print(year)
+                # print(year)
                 file <- make_filename(year)
-                print(file)
+                # print(file)
                 tryCatch({
                         dat <- fars_read(file)
                         dplyr::mutate(dat, year = year) %>%

@@ -25,7 +25,7 @@ It has two functions `fars_summarize_years` and `fars_map_state`.
 
 `fars_summarize_years` makes a frecuency table for accidents by months for years passed as arguments for all US States.
 
-```{r fars_summarize_years}
+```{r fars_summarize_years, message=FALSE, warning=FALSE}
 fars_summarize_years(c(2013, 2014, 2015))
 ```
 
